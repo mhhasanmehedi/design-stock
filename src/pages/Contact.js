@@ -2,8 +2,11 @@ import React from "react";
 import Layout from "../components/Layout";
 import ContactForm from "../components/ContactForm";
 import ContactInfo from "../components/ContactInfo";
+import useDocumentTitle from "../utils/documentTitle";
 
 const Contact = () => {
+  useDocumentTitle("Contact | Design Stock");
+
   return (
     <Layout>
       <div className="contact sectionPadding">

@@ -4,8 +4,11 @@ import { AiTwotoneDelete } from "react-icons/ai";
 import { GiShoppingCart } from "react-icons/gi";
 import Layout from "../components/Layout";
 import { Link } from "react-router-dom";
+import useDocumentTitle from "../utils/documentTitle";
 
 const Cart = () => {
+  useDocumentTitle("Cart | Design Stock");
+
   const { cartItems, removeFromCart, clearCart } = useContext(CartContext);
 
   const handleRemove = (id) => {
@@ -13,7 +16,6 @@ const Cart = () => {
   };
 
   const clearCartHandler = () => {
-  
     clearCart();
   };
   return (

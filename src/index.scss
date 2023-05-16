@@ -449,6 +449,9 @@ p {
       outline: none;
       transition: 0.4s;
       font-family: $font1;
+      &:hover {
+        background: linear-gradient(98.19deg, #2199f5 6.29%, #01bced 93.71%);
+      }
     }
   }
 
@@ -491,6 +494,31 @@ p {
     &:hover {
       background: none;
       background-color: rgb(201, 14, 55);
+    }
+  }
+}
+
+// not found page style
+.notFound {
+  text-align: center;
+  .icon {
+    font-size: 100px;
+    line-height: 0.4;
+  }
+
+  .backHomeBtn {
+    text-decoration: none;
+    display: inline-block;
+    background: linear-gradient(98.19deg, #01bced 6.29%, #2199f5 93.71%);
+    border-radius: 8px;
+    color: white;
+    padding: 16px 30px;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    font-family: $font1;
+    &:hover {
+      background: linear-gradient(98.19deg, #2199f5 6.29%, #01bced 93.71%);
     }
   }
 }
