@@ -1,81 +1,67 @@
+// import dependencies
 import React, { useContext } from "react";
 import { CartContext } from "../contexts/CartContext";
-import { AiTwotoneDelete } from "react-icons/ai";
-import { GiShoppingCart } from "react-icons/gi";
-import Layout from "../components/Layout";
-import { Link } from "react-router-dom";
+import Layout from "../components/layout/Layout";
 import useDocumentTitle from "../utils/documentTitle";
+import toastify from "../utils/toastify";
+import EmptyCart from "../components/cart/EmptyCart";
+import CartTr from "../components/cart/CartTr";
+import CartTotal from "../components/cart/CartTotal";
 
 const Cart = () => {
+  // Set Document Title
   useDocumentTitle("Cart | Design Stock");
 
-  const { cartItems, removeFromCart, clearCart } = useContext(CartContext);
+  const { cartItems, clearCart } = useContext(CartContext);
 
-  const handleRemove = (id) => {
-    removeFromCart(id);
-  };
-
+  // Cart Clear Handler
   const clearCartHandler = () => {
     clearCart();
+    toastify.success("Clear your cart successfully!");
   };
+
   return (
     <Layout>
       <div className="cart sectionPadding">
         <div className="container">
-          {cartItems?.length === 0 && (
-            <div className="emptyCart">
-              <div className="icon">
-                <GiShoppingCart />
-              </div>
-              <h3>Your Cart is Empty</h3>
-              <Link className="backHomeBtn" to="/home">
-                Back Home
-              </Link>
-            </div>
-          )}
+          {/* If Cart is Empty  */}
+          {cartItems?.length === 0 && <EmptyCart />}
 
           {cartItems?.length > 0 && (
-            <>
-              <table className="table table-striped">
-                <thead>
-                  <tr>
-                    <td>SL </td>
-                    <td>Title</td>
-                    <td>Price</td>
-                    <td>Quantity</td>
-                    <td>Total Price</td>
-                    <td style={{ width: "40px" }}>Action</td>
-                  </tr>
-                </thead>
-
-                <tbody>
-                  {cartItems?.map(({ id, title, price, quantity }, index) => (
-                    <tr key={id}>
-                      <td>{index}</td>
-                      <td>{title}</td>
-                      <td>{price}</td>
-                      <td>{quantity}</td>
-                      <td>{price * quantity}</td>
-                      <td className="text-center">
-                        <button
-                          className="deleteBtn"
-                          onClick={() => handleRemove(id)}
-                        >
-                          <AiTwotoneDelete />
-                        </button>
-                      </td>
+            <div className="row g-4">
+              <div className="col-lg-8">
+                <table className="table table-striped">
+                  <thead>
+                    <tr>
+                      <td>SL</td>
+                      <td>Title</td>
+                      <td>Price</td>
+                      <td>QTY</td>
+                      <td>Total Price</td>
+                      <td style={{ width: "40px" }}>Action</td>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
 
-              <div className="d-flex align-items-center justify-content-between">
-                <button className="clearBtn" onClick={clearCartHandler}>
-                  Clear Cart
-                </button>
-                <button className="proceedBtn">Proceed To Checkout</button>
+                  <tbody>
+                    {cartItems?.map((item, index) => (
+                      <CartTr key={item.id} item={item} index={index} />
+                    ))}
+                  </tbody>
+                </table>
+
+                <div className="d-flex align-items-center justify-content-between">
+                  <button
+                    className="primaryBtn clearBtn"
+                    onClick={clearCartHandler}
+                  >
+                    Clear Cart
+                  </button>
+                </div>
               </div>
-            </>
+              <div className="col-lg-4">
+                <CartTotal />
+              </div>
+            </div>
           )}
         </div>
       </div>

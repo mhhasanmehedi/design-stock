@@ -1,46 +1,8 @@
+// Import dependencies
 import React from "react";
-import Logo from "../assets/images/footerLogo.png";
+import Logo from "../../assets/images/footerLogo.png";
 import { Link } from "react-router-dom";
-import { BsFacebook, BsTwitter, BsWhatsapp } from "react-icons/bs";
-import { AiFillInstagram } from "react-icons/ai";
-
-const footerNavData = [
-  {
-    pageName: "Home",
-    slug: "/home",
-  },
-  {
-    pageName: "Our Services",
-    slug: "/service",
-  },
-  {
-    pageName: "About us",
-    slug: "/about",
-  },
-  {
-    pageName: "Contact us",
-    slug: "/contact",
-  },
-];
-
-const socialData = [
-  {
-    link: "/",
-    icon: <BsFacebook />,
-  },
-  {
-    link: "/",
-    icon: <BsTwitter />,
-  },
-  {
-    link: "/",
-    icon: <BsWhatsapp />,
-  },
-  {
-    link: "/",
-    icon: <AiFillInstagram />,
-  },
-];
+import { footerNavData, socialData } from "../../assets/data/data";
 
 const Footer = () => {
   return (
@@ -64,7 +26,13 @@ const Footer = () => {
 
           <div className="socialLinks">
             {socialData?.map((item, i) => (
-              <a className="socialLink" href={item.link} key={i}>
+              <a
+                className="socialLink"
+                href={item.link}
+                key={i}
+                target="_blank"
+                rel="noreferrer"
+              >
                 {item.icon}
               </a>
             ))}

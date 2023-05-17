@@ -41,6 +41,23 @@ p {
   text-align: center;
 }
 
+.primaryBtn {
+  display: inline-block;
+  background: linear-gradient(98.19deg, #01bced 6.29%, #2199f5 93.71%);
+  border-radius: 8px;
+  color: white;
+  padding: 16px;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  font-family: $font1;
+  text-decoration: none;
+
+  &:hover {
+    background: linear-gradient(98.19deg, #01bced 6.29%, #0b65aa 93.71%);
+  }
+}
+
 // Navbar Style
 .navBar {
   padding: 24px 0;
@@ -51,6 +68,20 @@ p {
       width: auto;
     }
   }
+
+  .navbar-toggler {
+    border: none;
+    border-radius: none;
+    &[aria-expanded="true"] {
+      .navbar-toggler-icon {
+        background-image: url(../src/assets/images/cross.png);
+      }
+    }
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
   .nav-item:nth-last-of-type(1) {
     .navLink {
       margin-right: 0;
@@ -97,11 +128,8 @@ p {
     }
 
     .loginBtn {
-      border: none;
-      background: linear-gradient(98.19deg, #01bced 6.29%, #2199f5 93.71%);
       border-radius: 4px;
       padding: 10px 20px;
-      color: white;
       position: relative;
       &::after {
         position: absolute;
@@ -249,13 +277,13 @@ p {
       }
 
       .addToCartBtn {
-        color: white;
+        // color: white;
         padding: 20px;
         width: 100%;
-        border-radius: 8px;
-        border: none;
-        transition: 0.4s;
-        font-weight: 500;
+        // border-radius: 8px;
+        // border: none;
+        // transition: 0.4s;
+        // font-weight: 500;
       }
     }
   }
@@ -390,7 +418,7 @@ p {
         display: block;
         margin-bottom: 12px;
         .required {
-          color: red;
+          color: #ff6016;
         }
       }
       input,
@@ -411,20 +439,14 @@ p {
           border-color: #229af6;
         }
       }
+
+      textarea {
+        min-height: 174px;
+      }
     }
 
     .submitBtn {
-      background: linear-gradient(98.19deg, #01bced 6.29%, #2199f5 93.71%);
-      border-radius: 8px;
-      color: white;
       padding: 22px 61px;
-      border: none;
-      outline: none;
-      transition: 0.4s;
-      font-family: $font1;
-      &:hover {
-        background: linear-gradient(98.19deg, #01bced 6.29%, #0b65aa 93.71%);
-      }
     }
   }
 }
@@ -440,18 +462,7 @@ p {
 
     .backHomeBtn {
       text-decoration: none;
-      display: inline-block;
-      background: linear-gradient(98.19deg, #01bced 6.29%, #2199f5 93.71%);
-      border-radius: 8px;
-      color: white;
       padding: 16px 30px;
-      border: none;
-      outline: none;
-      transition: 0.4s;
-      font-family: $font1;
-      &:hover {
-        background: linear-gradient(98.19deg, #2199f5 6.29%, #01bced 93.71%);
-      }
     }
   }
 
@@ -462,29 +473,42 @@ p {
     background-color: transparent;
   }
 
-  .clearBtn,
-  .proceedBtn {
-    text-decoration: none;
-    display: inline-block;
-    background: linear-gradient(
-      98deg,
-      rgba(1, 188, 237, 1) 7%,
-      rgba(33, 153, 245, 1) 93%
-    );
-    border-radius: 8px;
-    color: white;
+  .clearBtn {
     padding: 14px 30px;
-    border: none;
-    outline: none;
-    transition: 0.4s;
-    font-family: $font1;
-    transition: 0.4s;
-    &:hover {
-      background: linear-gradient(
-        98deg,
-        rgba(33, 153, 245, 1) 7%,
-        rgba(1, 188, 237, 1) 93%
-      );
+  }
+
+  .cartTotal {
+    border: 1px solid #f7f6f6;
+    padding: 20px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+
+    & > .title {
+      text-align: center;
+      font-size: 20px;
+      background-color: #f7f6f6;
+      padding: 10px;
+      border-radius: 4px;
+    }
+    & > h5 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #616161;
+      font-family: $font1;
+      font-size: 16px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #f7f6f6;
+      padding: 10px 0;
+      span {
+        font-weight: normal;
+      }
+    }
+
+    .proceedBtn {
+      width: 100%;
+      padding: 14px 30px;
+      margin-top: 30px;
     }
   }
 
@@ -507,16 +531,8 @@ p {
   }
 
   .backHomeBtn {
-    text-decoration: none;
-    display: inline-block;
-    background: linear-gradient(98.19deg, #01bced 6.29%, #2199f5 93.71%);
-    border-radius: 8px;
-    color: white;
     padding: 16px 30px;
-    border: none;
-    outline: none;
-    transition: 0.4s;
-    font-family: $font1;
+
     &:hover {
       background: linear-gradient(98.19deg, #2199f5 6.29%, #01bced 93.71%);
     }
@@ -532,6 +548,18 @@ p {
   .sectionTitle {
     font-size: 35px;
     margin-bottom: 40px;
+  }
+
+  .contact {
+    .contactInfo {
+      & > h2 {
+        font-size: 40px;
+        margin-bottom: 20px;
+      }
+      .contactItems {
+        gap: 20px;
+      }
+    }
   }
 
   .aboutArea {
@@ -582,6 +610,10 @@ p {
   .sectionTitle {
     font-size: 25px;
     margin-bottom: 25px;
+  }
+
+  .navBar {
+    padding: 10px 0;
   }
 
   .aboutArea {

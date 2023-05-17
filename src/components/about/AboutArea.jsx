@@ -1,6 +1,7 @@
+// import dependencies
 import React from "react";
-import StarIcon from "../assets/images/star.png";
-import AboutImg from "../assets/images/aboutImg.png";
+import StarIcon from "../../assets/images/star.png";
+import AboutImg from "../../assets/images/aboutImg.png";
 
 const AboutArea = () => {
   return (
@@ -30,8 +31,9 @@ const AboutArea = () => {
               <div className="designProcess">
                 <h3>Our Logo Design Process</h3>
                 <p>
-                  Research and Analysis > Brainstorming > Concept Development >
-                  Feedback and Revisions > Finalize and Deliver.
+                  Research and Analysis {">"} Brainstorming {">"} Concept
+                  Development {">"} Feedback and Revisions {">"} Finalize and
+                  Deliver.
                 </p>
               </div>
               <div className="achievement">

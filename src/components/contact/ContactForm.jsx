@@ -1,5 +1,8 @@
+// import dependencies
 import React, { useState } from "react";
+import toastify from "../../utils/toastify";
 
+// Define Initial State
 const initialState = {
   name: "",
   company_name: "",
@@ -11,10 +14,11 @@ const initialState = {
 const ContactForm = () => {
   const [formData, setFormData] = useState(initialState);
 
+  // Submit Handler
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log(formData);
+    toastify.success("Your information submitted successfully!");
 
     setFormData(initialState);
   };
@@ -111,7 +115,7 @@ const ContactForm = () => {
           </div>
         </div>
         <div className="col-md-12 text-end">
-          <button className="submitBtn" type="submit">
+          <button className="primaryBtn submitBtn" type="submit">
             Send Your Message
           </button>
         </div>

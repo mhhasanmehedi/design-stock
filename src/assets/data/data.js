@@ -1,3 +1,12 @@
+// import react icons
+import { BsFacebook, BsTwitter, BsWhatsapp } from "react-icons/bs";
+import { AiFillInstagram } from "react-icons/ai";
+import Portfolio1 from "../images/portfolio/portfolio1.png";
+import Portfolio2 from "../images/portfolio/portfolio2.png";
+import Portfolio3 from "../images/portfolio/portfolio4.png";
+import Portfolio4 from "../images/portfolio/portfolio4.png";
+
+// Export service Data
 export const serviceData = [
   {
     id: 1,
@@ -50,4 +59,72 @@ export const serviceData = [
     ],
     comment: "recommended",
   },
+];
+
+// Export Navbar Data
+export const navbarData = [
+  {
+    pageName: "Home",
+    slug: "/home",
+  },
+  {
+    pageName: "Our Services",
+    slug: "/service",
+  },
+  {
+    pageName: "About us",
+    slug: "/about",
+  },
+  {
+    pageName: "Contact us",
+    slug: "/contact",
+  },
+];
+
+// Export social Data
+export const socialData = [
+  {
+    link: "https://www.facebook.com/",
+    icon: <BsFacebook />,
+  },
+  {
+    link: "https://twitter.com/",
+    icon: <BsTwitter />,
+  },
+  {
+    link: "https://api.whatsapp.com/send?phone=1234567890",
+    icon: <BsWhatsapp />,
+  },
+  {
+    link: "https://www.instagram.com/",
+    icon: <AiFillInstagram />,
+  },
+];
+
+// Footer Navbar Data
+export const footerNavData = [
+  {
+    pageName: "Home",
+    slug: "/home",
+  },
+  {
+    pageName: "Our Services",
+    slug: "/service",
+  },
+  {
+    pageName: "About us",
+    slug: "/about",
+  },
+  {
+    pageName: "Contact us",
+    slug: "/contact",
+  },
+];
+
+// Export Portfolio Data
+export const portfolioData = [
+  { id: 1, img: Portfolio1 },
+  { id: 2, img: Portfolio2 },
+  { id: 3, img: Portfolio3 },
+  { id: 4, img: Portfolio4 },
 ];

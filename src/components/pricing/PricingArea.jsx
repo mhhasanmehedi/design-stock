@@ -1,9 +1,12 @@
+// import dependencies
 import React from "react";
 import PricingCard from "./PricingCard";
-import { serviceData } from "../assets/data/data";
+import { serviceData } from "../../assets/data/data";
 
 const PricingArea = () => {
+  // Decide what to render
   let content;
+
   if (serviceData.length === 0) {
     content = <div>No Service Found!</div>;
   } else if (serviceData.length > 0) {
@@ -25,8 +28,8 @@ const PricingArea = () => {
         <div className="requirement">
           <h4>What are the requirements to order a logo design?</h4>
           <p>
-            Your Logo Design Brief >Brand
-            Guidelines>Budget>Timeline>Communication . <br />
+            Your Logo Design Brief {">"} Brand Guidelines {">"}
+            Budget {">"} Timeline {">"} Communication . <br />
             <br />
             Overall, the more information and guidance the client can provide,
             the better the designer can create a logo that meets their needs and

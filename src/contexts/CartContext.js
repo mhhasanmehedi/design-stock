@@ -1,5 +1,7 @@
+// Import Dependency
 import React, { createContext, useState, useEffect } from "react";
 
+// Define and Export CartContext
 export const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
@@ -18,6 +20,7 @@ const CartProvider = ({ children }) => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }, [cartItems]);
 
+  // Add to Cart Function
   const addToCart = (item) => {
     const existingItem = cartItems.find((cartItem) => cartItem.id === item.id);
 
@@ -33,11 +36,13 @@ const CartProvider = ({ children }) => {
     }
   };
 
+  // Remove From Cart Function
   const removeFromCart = (itemId) => {
     const updatedCartItems = cartItems.filter((item) => item.id !== itemId);
     setCartItems(updatedCartItems);
   };
 
+  // Clear Cart Function
   const clearCart = () => {
     setCartItems([]);
   };

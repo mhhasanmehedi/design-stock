@@ -1,3 +1,4 @@
+// Import dependencies and pages
 import React from "react";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import Home from "./pages/Home";

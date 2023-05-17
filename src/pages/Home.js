@@ -1,11 +1,13 @@
+// import dependencies
 import React from "react";
-import Layout from "../components/Layout";
-import AboutArea from "../components/AboutArea";
-import PricingArea from "../components/PricingArea";
-import PortfolioArea from "../components/PortfolioArea";
+import Layout from "../components/layout/Layout";
+import AboutArea from "../components/about/AboutArea";
+import PricingArea from "../components/pricing/PricingArea";
+import PortfolioArea from "../components/portfolio/PortfolioArea";
 import useDocumentTitle from "../utils/documentTitle";
 
 const Home = () => {
+  // Set Document Title
   useDocumentTitle("Home | Design Stock");
 
   return (

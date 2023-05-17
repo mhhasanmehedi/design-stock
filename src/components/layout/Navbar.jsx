@@ -1,27 +1,10 @@
+// Import Dependencies
 import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
-import Logo from "../assets/images/logo.png";
-import ShoppingIcon from "../assets/images/shopping.png";
-import { CartContext } from "../contexts/CartContext";
-
-const navbarData = [
-  {
-    pageName: "Home",
-    slug: "/home",
-  },
-  {
-    pageName: "Our Services",
-    slug: "/service",
-  },
-  {
-    pageName: "About us",
-    slug: "/about",
-  },
-  {
-    pageName: "Contact us",
-    slug: "/contact",
-  },
-];
+import Logo from "../../assets/images/logo.png";
+import ShoppingIcon from "../../assets/images/shopping.png";
+import { CartContext } from "../../contexts/CartContext";
+import { navbarData } from "../../assets/data/data";
 
 const Navbar = () => {
   const { cartItems } = useContext(CartContext);
@@ -63,7 +46,7 @@ const Navbar = () => {
               <img src={ShoppingIcon} alt="Shopping cart icon" />
               <div className="count">{cartItems?.length}</div>
             </Link>
-            <button className="loginBtn">Log in</button>
+            <button className="primaryBtn loginBtn">Log in</button>
           </div>
         </div>
       </div>

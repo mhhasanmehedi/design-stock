@@ -1,25 +1,34 @@
+// Import dependencies
 import React, { useContext, useState } from "react";
-import { CartContext } from "../contexts/CartContext";
+import { CartContext } from "../../contexts/CartContext";
 import { GiCheckMark } from "react-icons/gi";
+import toastify from "../../utils/toastify";
 
 const PricingCard = ({ service }) => {
+  // Destructure Service object
   const { id, price, title, features, comment } = service || {};
+
+  const { addToCart } = useContext(CartContext);
   const [hover, setHover] = useState();
 
+  // Mouse Enter Handler
   const handleMouseEnter = () => {
     setHover(true);
   };
 
+  // Mouse Leave Handler
   const handleMouseLeave = () => {
     setHover(false);
   };
 
-  const { addToCart } = useContext(CartContext);
-
+  // Add to Cart Handler
   const handleAddToCart = () => {
     addToCart({ id, title, price, features });
+
+    toastify.success("Services added successfully!");
   };
 
+  // Background dynamic style
   const bgStyle = `${
     comment === "popular"
       ? "linear-gradient(262.64deg, #FF9810 0%, #FFB452 100%)"
@@ -28,6 +37,7 @@ const PricingCard = ({ service }) => {
       : "linear-gradient(262.64deg, #5938FF 0%, #7B61FF 100%)"
   }`;
 
+  // Hover background dynamic style
   const hoverBgStyle = `${
     comment === "popular"
       ? "linear-gradient(262.64deg, #FFB452 0%, #FF9810 100%)"
@@ -36,6 +46,7 @@ const PricingCard = ({ service }) => {
       : "linear-gradient(262.64deg, #7B61FF 0%, #5938FF 100%)"
   }`;
 
+  // Color dynamic style
   const colorStyle = `${
     comment === "popular"
       ? "#FFA630"
@@ -86,7 +97,7 @@ const PricingCard = ({ service }) => {
             ))}
           </ul>
           <button
-            className="addToCartBtn"
+            className="primaryBtn addToCartBtn"
             style={{ background: hover ? hoverBgStyle : bgStyle }}
             onClick={handleAddToCart}
             onMouseEnter={handleMouseEnter}
