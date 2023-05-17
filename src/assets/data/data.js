@@ -3,7 +3,7 @@ import { BsFacebook, BsTwitter, BsWhatsapp } from "react-icons/bs";
 import { AiFillInstagram } from "react-icons/ai";
 import Portfolio1 from "../images/portfolio/portfolio1.png";
 import Portfolio2 from "../images/portfolio/portfolio2.png";
-import Portfolio3 from "../images/portfolio/portfolio4.png";
+import Portfolio3 from "../images/portfolio/portfolio3.png";
 import Portfolio4 from "../images/portfolio/portfolio4.png";
 
 // Export service Data
